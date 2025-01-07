@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ANANAS</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+        *{
+            font-family: "Outfit", serif;
+        }
+        .navbar{
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            display: flex;
+            background: rgb(0,0,0,0.3);
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar .nav-logo{
+            width: 20%;
+            height: 100%;
+        }
+        .navbar .nav-logo img{
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+        .nav-links{
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .nav-links a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+        }
+        .hero{
+            background-image:linear-gradient(rgb(0,0,0,0.4),rgb(0,0,0,0.4)), url(img/hero.webp);
+            width: 100%;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding-bottom: 5%;
+        }
+        .hero h2{
+            font-size: 55px;
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+        }
+        .hero form{
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .filter-buttons{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
+        }
+        .filter-buttons button{
+            width: 80px;
+            height: 50px;
+            border-radius: 5px;
+            background-color: #fff;
+            border: hidden;
+            color: #000;
+        }
+        .filter-selection{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            gap: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        .filter-selection input{
+            background: none;
+            border: hidden;
+            outline: none;
+        }
+        .filter-selection select{
+            border: hidden;
+            outline: none;
+        }
+        .filter-selection button{
+            background-color: #000;
+            color: #fff;
+            border: hidden;
+            height: 40px;
+            width: 40px;
+            border-radius: 5px;
+        }
+        .about-content{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        .about-content h2{
+            font-size: 30px;
+            font-weight: 400;
+            color: #000;
+        }
+        .about-content h3{
+            font-size: 30px;
+            font-weight: 600;
+            color: #000;
+        }
+        .about-content button{
+            background-color: #000;
+            color: #fff;
+            border-radius: 5px;
+            height: 45px;
+            width: 200px;
+            border: hidden;
+            gap: 10px;
+        }
+        .about-content button i{
+            margin-left: 8px;
+        }
+        .about-image{
+            width: 100%;
+            height: auto;
+        }
+        .about-image img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .places h2{
+            font-size: 50px;
+            font-weight: 700;
+            text-align: center;
+        }
+        @media(min-width:320px) and (max-width:480px){
+            .filter-selection{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .hero{
+                height: 70vh;
+            }
+            .hero h2{
+                font-size: 25px !important;
+            }
+        }
+</style>
+    </head>
+    <body>
+
+        <div class="navbar">
+            <div class="nav-logo">
+                <img src alt>
+            </div>
+            <div class="nav-links">
+                <a href>Buy</a>
+                <a href>Rent</a>
+                <a href>Off Plan</a>
+                <a href>About Us</a>
+                <a href>Careers</a>
+            </div>
+        </div>
+
+        <div class="hero">
+            <h2 class="mb-3">Discover the Top Real Estate <br> Properties in
+                Dubai</h2>
+            <form>
+                <div class="filter-buttons mb-3">
+                    <button>Buy</button>
+                    <button>Rent</button>
+                    <button>Off Plan</button>
+                </div>
+                <div class="filter-selection">
+                    <input type="search" name id
+                        placeholder="Search for Properties">
+                    <button><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                    <select name id>
+                        <option value>Property Type</option>
+                    </select>
+                    <select name id>
+                        <option value>Location</option>
+                    </select>
+                    <select name id>
+                        <option value>Bedrooms</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+        <style>
+            .exclusive h2{
+                background-color: #000;
+                width: 100%;
+                padding: 20px;
+                font-size: 25px;
+                font-weight: 500;
+                color: #fff;
+            }
+            .exclusive-card{
+                width: 100%;
+                height: 250px;
+                background-position: center;
+                background-size: cover;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-end;
+                padding: 15px;
+            }
+            .exclusive-card h3{
+                font-size: 25px;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: 700;
+                line-height: 1;
+            }
+            .exclusive-card span{
+                color: #fff;
+            }
+            .exclusive-card span i{
+                margin-right: 8px;
+            }
+            .exclusive a button{
+                border: hidden;
+                height: 40px;
+                width: 150px;
+                border: 2px solid #3f3f3f;
+                background-color: #fff;
+                color: #000;
+            }
+        </style>
+        <div class="container exclusive pt-3 pb-5">
+            <h2>Our Exclusive Projects</h2>
+            <p>At Azizi, we pride ourselves on design that combines sleek aesthetics with functional comfort.
+                Our far-reaching portfolio has something for everyone, so you can find a home that’s authentically you.</p>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <a href="" class="text-decoration-none">
+                    <div class="exclusive-card" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 20%, transparent 45%),url(https://www.azizidevelopments.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fog52t9hg6rhr%2FjJ62dxA2W6ClKze7GlfLZ%2F7539e0992f4230360d9340c17cbd8f34%2F00_Hero.jpeg&w=1920&q=70);">
+                        <h3>Riviera</h3>
+                        <span><i class="fa-solid fa-location-dot"></i>Meydan</span>
+                    </div>
+                </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="" class="text-decoration-none">
+                    <div class="exclusive-card" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 20%, transparent 45%),url(img/contact-bg.webp);">
+                        <h3>MONACO MANSIONS</h3>
+                        <span><i class="fa-solid fa-location-dot"></i>Dubai South</span>
+                    </div>
+                </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="" class="text-decoration-none">
+                    <div class="exclusive-card" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 20%, transparent 45%),url(https://www.azizidevelopments.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fog52t9hg6rhr%2F7sA4oerH3b0dHzwRa01JhA%2F64c6fc8ec01c9b6163023d500c5a3d09%2FHero-Image-Jewel-1920x960px.jpg&w=1920&q=70);">
+                        <h3>Azizi Jewel</h3>
+                        <span><i class="fa-solid fa-location-dot"></i>Al Furjan</span>
+                    </div>
+                </a>
+                </div>
+            </div>
+            <a href="" class="w-100 mt-5 text-decoration-none d-flex align-items-center justify-content-center"><button>VIEW MORE</button></a>
+        </div>
+        <div class="section-about"
+            style="background-color: #e1e1e1;width: 100%;">
+            <div class="container pt-3 pb-3">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="about-content">
+                            <h2>ABOUT</h2>
+                            <h3>ANANAS REAL ESTATE</h3>
+                            <h5 class="mb-3">Your Reliable Ally at Your
+                                Disposal</h5>
+                            <p>Ananas Real Estates stands as a prominent channel
+                                partner in real estate, equipped with extensive
+                                expertise in the Dubai property market and
+                                serving as a comprehensive solution for your
+                                real estate requirements. Whether you are in
+                                search of rental properties, move-in ready
+                                homes, or off-plan developments in Dubai, we
+                                provide an extensive selection of properties
+                                that align perfectly with your comfort,
+                                convenience, and financial plan.</p>
+                            <p class="mb-3">Ananas Real Estates stands as a
+                                prominent channel partner in real estate,
+                                equipped with extensive expertise in the Dubai
+                                property market and serving as a comprehensive
+                                solution for your real estate requirements.
+                                Whether you are in search of rental properties,
+                                move-in ready homes, or off-plan developments in
+                                Dubai, we provide an extensive selection of
+                                properties that align perfectly with your
+                                comfort, convenience, and financial plan.</p>
+                            <a href><button>Learn more about us<i
+                                        class="fa-solid fa-arrow-trend-up"></i></button></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about-image">
+                            <img
+                                src="https://hjrealestates.com/wp-content/uploads/2024/10/hj-real-estates-home-about-bg-768x768.webp"
+                                alt>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+    .location-card{
+        width: 100%;
+        height: 350px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .location-card h2{
+        font-weight: 700;
+        color: #fff;
+        font-size: 35px;
+    }
+    .overlay-location{
+        display: none;
+        height: 100%;
+        padding: 10px;
+        width: 100%;
+        background: rgb(0,0,0,0.5);
+    }
+    .location-card:hover h2{
+        display: none;
+    }
+    .location-card:hover .overlay-location{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .overlay-location h3{
+        font-size: 30px;
+        color: #fff;
+        font-weight: 700;
+        text-align: center;
+    }
+    .overlay-location button{
+        background: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 8px;
+    }
+    .overlay-location p{
+        font-size: 15px;
+        color: #e1e1e1;
+        text-align: center;
+    }
+</style>
+        <div class="container pt-3 places pb-3">
+            <h2 class="mb-3 mt-3">DISCOVER YOUR SPOT</h2>
+            <p class="text-center w-50 m-auto mb-3">Our extensive collection of
+                projects transforms your living space into a source of
+                inspiration. With everything Dubai provides, select a
+                neighborhood that aligns with your way of life.</p>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <div class="location-card"
+                        style="background-image: url(img/dubai-south.webp);">
+                        <h2>DUBAI SOUTH</h2>
+                        <div class="overlay-location">
+                            <h3>DUBAI SOUTH</h3>
+                            <p>Dubai South is an emerging urban masterpiece in
+                                the capital.</p>
+                            <button>EXPLORE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="location-card"
+                        style="background-image: url(img/al-furjan.webp);">
+                        <h2>AL FURJAN</h2>
+                        <div class="overlay-location">
+                            <h3>AL FURJAN</h3>
+                            <p>Dubai South is an emerging urban masterpiece in
+                                the capital.</p>
+                            <button>EXPLORE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="location-card"
+                        style="background-image: url(img/pj.webp);">
+                        <h2>PALM JUMEIRAH</h2>
+                        <div class="overlay-location">
+                            <h3>PALM JUMEIRAH</h3>
+                            <p>Dubai South is an emerging urban masterpiece in
+                                the capital.</p>
+                            <button>EXPLORE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="location-card"
+                        style="background-image: url(img/studio-city.webp);">
+                        <h2>STUDIO CITY</h2>
+                        <div class="overlay-location">
+                            <h3>STUDIO CITY</h3>
+                            <p>Dubai South is an emerging urban masterpiece in
+                                the capital.</p>
+                            <button>EXPLORE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="location-card"
+                        style="background-image: url(img/jvc.webp);">
+                        <h2>JUMEIRAH VILLAGE CIRCLE</h2>
+                        <div class="overlay-location">
+                            <h3>JUMEIRAH VILLAGE CIRCLE</h3>
+                            <p>Dubai South is an emerging urban masterpiece in
+                                the capital.</p>
+                            <button>EXPLORE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="location-card"
+                        style="background-image: url(img/meydan.webp);">
+                        <h2>MEYDAN</h2>
+                        <div class="overlay-location">
+                            <h3>MEYDAN</h3>
+                            <p>Dubai South is an emerging urban masterpiece in
+                                the capital.</p>
+                            <button>EXPLORE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="location-card"
+                        style="background-image: url(img/dsc.webp);">
+                        <h2>DUBAI SPORTS CITY</h2>
+                        <div class="overlay-location">
+                            <h3>DUBAI SPORTS CITY</h3>
+                            <p>Dubai South is an emerging urban masterpiece in
+                                the capital.</p>
+                            <button>EXPLORE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="location-card"
+                        style="background-image: url(img/dhc.webp);">
+                        <h2>DUBAI HEALTH CARE CITY</h2>
+                        <div class="overlay-location">
+                            <h3>DUBAI HEALTH CARE CITY</h3>
+                            <p>Dubai South is an emerging urban masterpiece in
+                                the capital.</p>
+                            <button>EXPLORE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+    .contact-us{
+        width: 100%;
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+        display: grid;
+        padding: 30px;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        background-attachment: fixed;
+        background-image: linear-gradient(rgba(36, 124, 43, 0.7),rgba(97, 171, 231, 0.7)),url(img/contact-bg.webp);
+    }
+    .contact-us .content{
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .contact-us .content h2{
+        font-size: 50px;
+        color: #fff;
+        font-weight: 600;
+    }
+    .contact-us .content p{
+        color: #fff;
+        font-size: 18px;
+    }
+    .contact-us .form{
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+        padding: 20px;
+    }
+    .contact-us .form form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+    .contact-us .form form input{
+        width: 100%;
+        height: 40px;
+        border: hidden;
+        border-radius: 3px;
+        padding: 8px;
+        border: 1px solid #b3b3b3;
+    }
+    .contact-us .form form textarea{
+        width: 100%;
+        border-radius: 3px;
+        height: auto;
+        border: hidden;
+        padding: 8px;
+        border: 1px solid #b3b3b3;
+    }
+    .contact-us .form form button{
+        background-color: cadetblue;
+        color: #fff;
+        width: 200px;
+        height: 40px;
+        border: hidden;
+    }
+    @media(min-width:320px) and (max-width:480px){
+        .contact-us{
+            grid-template-columns: repeat(1,1fr);
+            height: auto;
+        }
+    }
+</style>
+        <div class="contact-us">
+            <div class="content">
+                <h2 class="mb-3">Looking to buy, sell, or just say hello? Let’s
+                    talk!</h2>
+                <p>You’re Just a Call or Message Away from Finding a Perfect
+                    Home in Dubai. Fill the form to help us know you and your
+                    requirements better!</p>
+            </div>
+            <div class="form">
+                <form>
+                    <h3>For quick assistance.</h3>
+                    <p>Send us details to get quick assistance now!</p>
+                    <div class="d-flex flex-column w-100 mb-2">
+                        <label for class="mb-1">Full Name</label>
+                        <input type="text" name id placeholder="Full Name">
+                    </div>
+                    <div class="d-flex flex-column w-100 mb-2">
+                        <label for class="mb-1">Email Address</label>
+                        <input type="text" name id placeholder="Email">
+                    </div>
+                    <div class="d-flex flex-column w-100 mb-2">
+                        <label for class="mb-1">Phone Number</label>
+                        <input type="tel" name id placeholder="Phone Number">
+                    </div>
+                    <div class="d-flex flex-column w-100 mb-2">
+                        <label for class="mb-1">Message</label>
+                        <textarea type="tel" name id placeholder="Phone Number"></textarea>
+                    </div>
+                    <button type="submit">Send Request</button>
+                </form>
+            </div>
+        </div>
+        <style>
+    .footer{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 20px;
+        padding: 30px;
+        background-color: #E7E3DD;
+    }
+    .footer-grid{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .social-icons{
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .social-icons i{
+        color: #000;
+        font-size: 20px;
+    }
+    .footer-grid a{
+        text-decoration: none;
+        color: #000;
+    }
+    .footer-grid h3{
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .copyright{
+        width: 100%;
+        padding: 20px;
+        color: #000;
+        display: flex;
+        border-top: 1px solid #b3b3b3;
+        align-items: center;
+        justify-content: center;
+        background: #E7E3DD;
+    }
+    @media(min-width:320px) and (max-width:480px){
+        .footer{
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+</style>
+        <footer>
+            <div class="footer">
+                <div class="footer-grid">
+                    <h2>ANANAS</h2>
+                    <p>Address</p>
+                    <div class="social-icons">
+                        <a href><i class="fa-brands fa-facebook"></i></a>
+                        <a href><i class="fa-brands fa-instagram"></i></a>
+                        <a href><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-grid">
+                    <h3>Our Company</h3>
+                    <a href>About Us</a>
+                    <a href>Contact Us</a>
+                    <a href>Blogs</a>
+                    <a href>Careers</a>
+                </div>
+                <div class="footer-grid">
+                    <h3>Properties</h3>
+                    <a href>For Rent</a>
+                    <a href>For Sale</a>
+                    <a href>Off Plan</a>
+                </div>
+                <div class="footer-grid">
+                    <h3>Legal</h3>
+                    <a href>Privacy Policy</a>
+                    <a href>Terms & Conditions</a>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 – Ananas Real Estate. All rights reserved.
+            </div>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+    </body>
+</html>
