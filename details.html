@@ -4,13 +4,406 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Slick CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+<!-- Slick JS -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+        *{
+            font-family: "Outfit", serif;
+        }
+        .page-path a{
+            text-decoration: none;
+            color: #585858;
+        }
+        .project-details h1{
+            font-size: 80px;
+            color: cadetblue;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .project-details-card{
+            width: 100%;
+            height: 120px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            display: flex;
+            padding: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .project-details-card h5{
+            font-size: 22px;
+            color: cadetblue;
+        }
+        .project-details-card h3{
+            font-size: 25px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .slider {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.item {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff ;
+}
+.item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Prev and Next Arrows */
+.slick-prevs, .slick-nexts {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #f1f1f1;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  visibility: visible;
+}
+
+.slick-nexts {
+right: 8px;
+}
+
+.slick-prevs {
+  left: 8px;
+  z-index: 1;
+}
+
+
+/* Slider Dots Styles */
+
+.slider-nav {
+    display: flex;
+    width: 100px;
+    overflow: hidden;  
+    margin: 10px auto;
+    height: 50px;
+    align-items: center;
+    padding:  0 3px;
+  position: relative;
+}
+.slider-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: all ease 0.4s;
+  bottom: auto;
+}
+
+.slider-nav ul li button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%; /* Default shape is a circle */
+  background: #d3d3d3;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for inactive dots */
+  transform: scale(0.5) /* Smooth transition for inactive dots */
+}
+
+.slider-nav ul li button::before {
+  display: none;
+}
+
+.slider-nav ul li.dot--medium button {
+    transform: scale(0.8)
+}
+
+.slider-nav ul li button {
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    border: none;
+    border-radius: 50%;
+    background: #d3d3d3;
+    padding: 0;
+    cursor: pointer;
+}
+
+.slider-nav ul li {
+    margin: 0;
+    margin-right: 10px;
+    line-height: 0;
+}
+
+.slider-nav ul li:last-child {
+    margin-right: 0;
+}
+
+ /* Active Dot Rectangle Animation */
+.slider-nav ul li.slick-active button {
+  background-color: #000000;
+  transform: scale(1.2);
+  animation: circle-to-rectangle 0.4s forwards; /* Animation to transform to rectangle */
+  width: 20px; /* Rectangle width */
+  height: 10px; /* Rectangle height */
+  border-radius: 15px; /* Rounded rectangle */
+}
+/* Define the circle-to-rectangle animation */
+@keyframes circle-to-rectangle {
+  0% {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* Start as a circle */
+  }
+  100% {
+    width: 20px;
+    height: 10px;
+    border-radius: 15px; /* End as a rectangle with rounded corners */
+  }
+}
+.contact-section{
+    padding: 30px;
+    height: 60vh;
+    display: grid;
+    align-items: center;
+    background-color: cadetblue;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+.contact-text{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.contact-text h2{
+    font-size: 60px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.contact-text p{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+}
+.contact-form{
+    width: 100%;
+    height: auto;
+}
+.contact-form form{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.contact-form form input{
+    border: hidden;
+    outline: none;
+    font-size: 18px;
+    background: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    width: 80%;
+    padding-bottom: 8px;
+}
+.contact-form form input::placeholder{
+    color: #fff;
+    font-weight: 300;
+}
+.contact-form form button{
+    background: none;
+    border: 1px solid #fff;
+    color: #fff;
+    height: 40px;
+    width: 150px;
+}
+@media(min-width:320px) and (max-width:480px){
+    .contact-section{
+        grid-template-columns: repeat(1,1fr);
+        height: auto;
+    }
+    .contact-text h2{
+        font-size: 40px;
+    }
+}
     </style>
 </head>
 
 <body>
+
+    <div class="container pt-4 pb-4">
+        <span class="page-path"><a href="">Home</a> - <a href="">Projects</a> - <a href="">Project Name</a></span>
+    </div>
+    <div class="container project-details">
+        <h1 class="text-center">Creek Views III</h1>
+        <img src="https://www.azizidevelopments.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fog52t9hg6rhr%2F3ylHzeh8KejNEqplQo3JfI%2Fa5413ab4dae7531d85172f4fa0acfa72%2F00_Hero.jpeg&w=1920&q=70" class="img-fluid mb-3" alt="">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="project-details-card">
+                    <h5>Community</h5>
+                    <h3>Dubai Healthcare City</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-details-card">
+                    <h5>Type</h5>
+                    <h3>Studio, 1-2 bedrooms</h3>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-details-card">
+                    <h5>Starting Price</h5>
+                    <h3>From AED 1 MN</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container pt-4 pb-4">
+        <div class="main">
+            <div class="slider">
+              <div>
+                <div class="item">
+                  <img src="https://www.azizidevelopments.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fog52t9hg6rhr%2F54TyvQwCGVWb4F6tWt4WJg%2Fee402e9bfc3b89461fc17a0751b0eba4%2F01_Gallery_1.jpeg&w=3840&q=70" alt="">
+                </div>
+                </div>
+              <div>
+                <div class="item">
+                 <img src="https://www.azizidevelopments.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fog52t9hg6rhr%2F6K4hYuEdQksUmzEMuNiLcG%2Fe8fed1fdb1ba7c62b511c1ad22fac530%2F01_Gallery_2.jpeg&w=3840&q=70" alt="">
+                </div>
+              </div>
+              <div>
+                <div class="item">
+                   <img src="https://www.azizidevelopments.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fog52t9hg6rhr%2F20BBnB6Zynd8iZo8IUZ2Bm%2Fafc29b5ef00630fefb45047170d9abc4%2F01_Gallery_3.jpeg&w=3840&q=70" alt="">
+                 </div>
+              </div>
+            </div>
+           <div class="slider-nav"></div>
+         </div>
+    </div>
+    <div class="container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d2749.0526474417607!2d55.324257!3d25.236497!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE0JzExLjQiTiA1NcKwMTknMjcuMyJF!5e1!3m2!1sen!2sus!4v1736314245357!5m2!1sen!2sus" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="container pt-3 pb-3">
+        <div class="contact-section">
+            <div class="contact-text">
+                <h2>Contact Us</h2>
+                 <p>Register your interest, schedule a private showing or request a callback by filling out the form.</p>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <input type="text" name="Name" id="" placeholder="Full Name*" required>
+                    <input type="text" name="Email" id="" placeholder="Email*" required>
+                    <input type="tel" name="Phone" id="" placeholder="Phone Number*" required>
+                    <button type="submit">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function() {
+  $('.slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    infinite: false,
+    appendDots: '.slider-nav',
+    dots: true,
+    arrows: true,
+    prevArrow: '<button type="button" class="slick-prevs">←</button>',
+    nextArrow: '<button type="button" class="slick-nexts">→</button>',
+    speed: 600 // Syncs with dot animation
+  });
+
+  const shiftUnit = 20;
+  let totalSlides = $('.slider-nav .slick-dots li').length;
+  let shiftValue = 0;
+  const RIGHT = -1;
+  const LEFT = 1;
+  const DotsToShow = 5;
+
+  if (totalSlides > DotsToShow) {
+    $('.slider-nav').addClass("dots-constrained");
+  }
+
+  initialDotsLayout();
+
+  $('.slider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+    let reqSlideVal = 0;
+
+    $('.slider-nav .slick-dots li').removeClass("dot--medium");
+
+    if (nextSlide > currentSlide) {
+      reqSlideVal = shiftValueCalculator(currentSlide, nextSlide, RIGHT) * shiftUnit * RIGHT;
+    } else {
+      reqSlideVal = shiftValueCalculator(currentSlide, nextSlide, LEFT) * shiftUnit;
+    }
+
+    if (nextSlide > 2 && nextSlide < totalSlides - 3) {
+      shiftValue = shiftValue + reqSlideVal;
+      $('.slider-nav .slick-dots li').eq(nextSlide + 1).addClass("dot--medium");
+      $('.slider-nav .slick-dots li').eq(nextSlide - 1).addClass("dot--medium");
+
+    } else if (nextSlide <= 2) {
+      shiftValue = 0;
+      initialDotsLayout();
+    } else if (nextSlide >= totalSlides - 3) {
+      shiftValue = (totalSlides - DotsToShow) * shiftUnit * RIGHT;
+      lastDotsLayout();
+    }
+
+    $('.slider-nav .slick-dots').css({ 'transform': 'translateX(' + shiftValue + 'px' + ')' });
+  });
+
+  function shiftValueCalculator(currentSlide, nextSlide, direction) {
+    let slideDifference = 0;
+    if (direction === RIGHT) {
+      slideDifference = nextSlide - currentSlide;
+    } else {
+      slideDifference = currentSlide - nextSlide;
+    }
+
+    switch (slideDifference) {
+      case 4: return 2;
+      case 3: return 1;
+      default: return slideDifference;
+    }
+  }
+
+  function initialDotsLayout() {
+    for (let i = 0; i <= 3; i++) {
+      $('.slider-nav .slick-dots li').eq(i).addClass("dot--medium");
+    }
+  }
+
+  function lastDotsLayout() {
+    for (let i = totalSlides; i >= totalSlides - 4; i--) {
+      $('.slider-nav .slick-dots li').eq(i).addClass("dot--medium");
+    }
+  }
+});
+
+    </script>
     
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
